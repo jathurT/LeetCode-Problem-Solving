@@ -13,7 +13,6 @@ class Solution {
         maxProfit = price - minPrice;
       }
     }
-
     return maxProfit;
   }
 }
