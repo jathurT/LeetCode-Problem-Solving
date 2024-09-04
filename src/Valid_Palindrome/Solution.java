@@ -35,11 +35,11 @@ class Solution1 {
       rc = s.charAt(r);
       if (lc >= 'A' && lc <= 'Z') lc += 32;
       if (rc >= 'A' && rc <= 'Z') rc += 32;
-      if (!isAlNum(lc)) {
+      if (isAlNum(lc)) {
         l++;
         continue;
       }
-      if (!isAlNum(rc)) {
+      if (isAlNum(rc)) {
         r--;
         continue;
       }
@@ -54,6 +54,6 @@ class Solution1 {
   }
 
   public static boolean isAlNum(char ch) {
-    return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z');
+    return (ch < '0' || ch > '9') && (ch < 'a' || ch > 'z');
   }
 }
