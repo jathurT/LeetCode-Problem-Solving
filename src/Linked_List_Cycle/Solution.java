@@ -17,6 +17,8 @@ class ListNode {
 }
 
 // Time complexity: O(n)
+// Space complexity: O(n)
+// Hash Table
 public class Solution {
   public boolean hasCycle(ListNode head) {
     ListNode current = head;
@@ -30,6 +32,8 @@ public class Solution {
 }
 
 // Time complexity: O(n)
+// Space complexity: O(1)
+// Floyd's Tortoise and Hare algorithm
 class Solution1{
   public boolean hasCycle(ListNode head) {
     if (head == null) {
