@@ -23,6 +23,7 @@ class TreeNode {
   }
 }
 
+// root -> left -> right
 class Solution {
   public List<Integer> preorderTraversal(TreeNode root) {
     List<Integer> res = new ArrayList<>();

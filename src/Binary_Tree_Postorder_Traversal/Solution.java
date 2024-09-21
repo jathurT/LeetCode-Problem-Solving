@@ -25,21 +25,32 @@ class TreeNode {
   }
 }
 
+// left -> right -> root
 class Solution {
   public List<Integer> postorderTraversal(TreeNode root) {
     List<Integer> nodeData = new ArrayList<>();
-    Stack<TreeNode> nodeStack = new Stack<>();
     if (root == null)
       return nodeData;
+
+    Stack<TreeNode> nodeStack = new Stack<>();
+    Stack<TreeNode> outputStack = new Stack<>();
+
     nodeStack.push(root);
+
     while (!nodeStack.isEmpty()) {
-      if (root.right != null)
-        nodeStack.push(root.right);
-      if (root.left != null)
-        nodeStack.push(root.left);
       TreeNode node = nodeStack.pop();
-      nodeData.add(node.val);
+      outputStack.push(node);
+
+      if (node.left != null)
+        nodeStack.push(node.left);
+      if (node.right != null)
+        nodeStack.push(node.right);
     }
+
+    while (!outputStack.isEmpty()) {
+      nodeData.add(outputStack.pop().val);
+    }
+
     return nodeData;
   }
 }
