@@ -17,6 +17,5 @@ public class PredicateExample {
     Predicate<Integer> isGreaterThan5 = isEven.and(num -> num > 5);
     List<Integer> evenNumbersGreaterThan5 = numbers.stream().filter(isGreaterThan5).toList();
     System.out.println("Numbers greater than 5: " + evenNumbersGreaterThan5);
-
   }
 }
