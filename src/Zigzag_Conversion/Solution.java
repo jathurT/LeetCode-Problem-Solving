@@ -2,11 +2,11 @@ package Zigzag_Conversion;
 
 class Solution {
   public String convert(String s, int numRows) {
-    if (numRows == 1) return s;
+    if (numRows == 1 || numRows >= s.length()) return s;
 
     StringBuilder[] rows = new StringBuilder[numRows];
     for (int i = 0; i < numRows; i++) {
-      rows[i]=new StringBuilder();
+      rows[i] = new StringBuilder();
     }
 
     int row = 0;
@@ -20,7 +20,7 @@ class Solution {
       row += goingDown ? +1 : -1;
     }
     StringBuilder finalString = new StringBuilder();
-    for (StringBuilder str:rows){
+    for (StringBuilder str : rows) {
       finalString.append(str);
     }
     return finalString.toString();
